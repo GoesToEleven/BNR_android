@@ -13,5 +13,6 @@
     <string name="question_africa">africa\'s lions are blue</string>
     <string name="question_americas">the amazon is a river</string>
     <string name="question_asia">sushi comes from asia</string>
+    <string name="previous_button">Previous</string>
 
 </resources>

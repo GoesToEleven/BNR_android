@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     private Button mTrueButton;
     private Button mFalseButton;
     private Button mNextButton;
+    private Button mPreviousButton;
     private TextView mQuestionTextView;
 
     private Question[] mQuestionBank = new Question[] {
@@ -30,6 +31,18 @@ public class MainActivity extends Activity {
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
+    }
+
+    private void decrementQuestionIndex() {
+        if (mCurrentIndex < 1) {
+            mCurrentIndex = 4;
+        } else {
+            mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+        }
+    }
+
+    private void incrementQuestionIndex() {
+        mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
     }
 
     private void checkAnswer(boolean userPressedTrue){
@@ -51,6 +64,14 @@ public class MainActivity extends Activity {
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
         updateQuestion();
 
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                incrementQuestionIndex();
+                updateQuestion();
+            }
+        });
+
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,15 +89,25 @@ public class MainActivity extends Activity {
             }
         });
 
+        mPreviousButton = (Button) findViewById(R.id.previous_button);
+        mPreviousButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decrementQuestionIndex();
+                updateQuestion();
+            }
+        });
+
         mNextButton = (Button) findViewById(R.id.next_button);
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                incrementQuestionIndex();
                 updateQuestion();
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
