@@ -3,10 +3,15 @@
 
     <string name="app_name">GeoQuiz</string>
     <string name="action_settings">Settings</string>
-    <string name="question_text">Constan is the largest city in Turkey.</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
+    <string name="next_button">Next</string>
+    <string name="question_oceans">Oceans are wet</string>
+    <string name="question_mideast">everest is in the mideast</string>
+    <string name="question_africa">africa\'s lions are blue</string>
+    <string name="question_americas">the amazon is a river</string>
+    <string name="question_asia">sushi comes from asia</string>
 
 </resources>
