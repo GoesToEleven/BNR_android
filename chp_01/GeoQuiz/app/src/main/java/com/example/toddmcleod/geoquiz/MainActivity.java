@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
     private int mCurrentIndex = 0;
 
     private void updateQuestion() {
+//        Log.d(TAG, "Updating question text for question# " + mCurrentIndex, new Exception());
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
     }
