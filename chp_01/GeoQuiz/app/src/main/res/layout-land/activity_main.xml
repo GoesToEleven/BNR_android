@@ -1,5 +1,5 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,7 +8,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:padding="24dp" />
+        android:padding="24dp"
+        tools:text="Question" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -36,6 +37,7 @@
         <!--COMMAND DELETE delete line of code-->
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,19 +49,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
-            android:src="@drawable/arrow_left"
-            android:contentDescription="@string/previous_button"/>
+            android:contentDescription="@string/previous_button"
+            android:src="@drawable/arrow_left" />
 
         <ImageButton
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
-            android:src="@drawable/arrow_right"
             android:contentDescription="@string/next_button"
-            />
+            android:src="@drawable/arrow_right" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/cheat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:text="@string/cheat_button" />
 
 </FrameLayout>
 
