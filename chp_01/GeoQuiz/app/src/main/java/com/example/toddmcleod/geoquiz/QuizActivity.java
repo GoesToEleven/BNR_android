@@ -1,7 +1,9 @@
 package com.example.toddmcleod.geoquiz;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -111,7 +113,15 @@ public class QuizActivity extends Activity {
             public void onClick(View v) {
                 boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
                 Intent i = CheatActivity.newIntent(QuizActivity.this, answerIsTrue);
-                startActivityForResult(i, REQUEST_CODE_CHEAT);
+
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                    Bundle options = ActivityOptions.makeCustomAnimation(QuizActivity.this,
+                            android.R.anim.fade_in,
+                            android.R.anim.fade_out).toBundle();
+                    startActivityForResult(i, REQUEST_CODE_CHEAT, options);
+                } else {
+                    startActivityForResult(i, REQUEST_CODE_CHEAT);
+                }
             }
         });
 
