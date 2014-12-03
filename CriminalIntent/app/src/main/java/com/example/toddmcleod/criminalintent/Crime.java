@@ -17,6 +17,11 @@ public class Crime {
         mDate = new Date();
     }
 
+    @Override
+    public String toString() {
+        return mTitle;
+    }
+
     public UUID getId() {
         return mId;
     }
